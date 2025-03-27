@@ -6,6 +6,9 @@
     <!--<meta http-equiv="refresh" content="0; url=http://localhost:8080">-->
     <title>Countdown to April 1st</title>
     <style>
+        html {
+            overflow: hidden;
+        }
         body {
             display: flex;
             flex-direction: column;
@@ -27,8 +30,8 @@
         }
         .white-glow {
             background-color: rgba(255, 255, 255, 0.04);
-            width: 648px;
-            height: 397px;
+            width: 40vw;
+            height: 40vh;
             top: 29.5%;
             left: 31%;
             transform: rotate(0deg);
@@ -37,16 +40,16 @@
         }
         .yellow-glow {
             background-color: rgba(255, 255, 150, 0.2);
-            width: 300px;
-            height: 150px;
+            width: 18vw;
+            height: 15vh;
             top: 36.5%;
             left: 39.5%;
             transform: rotate(-15deg);
         }
         .blue-glow {
             background-color: rgba(150, 255, 255, 0.2);
-            width: 260px;
-            height: 130px;
+            width: 14vw;
+            height: 13vh;
             top: 48%;
             left: 46%;
             transform: rotate(15deg);
@@ -57,10 +60,34 @@
         }
         .kiss-emoji {
             position: absolute;
-            bottom: 47px;
-            right: 230px;
+            bottom: 5vh;
+            right: 10vw;
             font-size: 18rem;
             transform: rotate(23deg);
+        }
+        @media only screen and (max-width: 600px) {
+            .white-glow {
+                width: 80vw;
+                height: 80vh;
+                top: 10%;
+                left: 10%;
+            }
+            .yellow-glow {
+                width: 38vw;
+                height: 35vh;
+                top: 36.5%;
+                left: 39.5%;
+            }
+            .blue-glow {
+                width: 34vw;
+                height: 33vh;
+                top: 28%;
+                left: 26%;
+            }
+            .kiss-emoji {
+                font-size: 8rem;
+                transform: rotate(23deg);
+            }
         }
     </style>
 </head>
