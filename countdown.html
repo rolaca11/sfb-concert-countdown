@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta http-equiv="refresh" content="0; url=http://localhost:8080">-->
+    <title>Countdown to April 1st</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            position: relative;
+        }
+        .glow-box {
+            position: absolute;
+            border-radius: 20px;
+            filter: blur(50px);
+            z-index: -1;
+        }
+        .white-glow {
+            background-color: rgba(255, 255, 255, 0.04);
+            width: 648px;
+            height: 397px;
+            top: 29.5%;
+            left: 31%;
+            transform: rotate(0deg);
+            filter: blur(100px);
+            border-radius: 200px;
+        }
+        .yellow-glow {
+            background-color: rgba(255, 255, 150, 0.2);
+            width: 300px;
+            height: 150px;
+            top: 36.5%;
+            left: 39.5%;
+            transform: rotate(-15deg);
+        }
+        .blue-glow {
+            background-color: rgba(150, 255, 255, 0.2);
+            width: 260px;
+            height: 130px;
+            top: 48%;
+            left: 46%;
+            transform: rotate(15deg);
+        }
+        .countdown {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .kiss-emoji {
+            position: absolute;
+            bottom: 47px;
+            right: 230px;
+            font-size: 18rem;
+            transform: rotate(23deg);
+        }
+    </style>
+</head>
+<body>
+<div class="glow-box white-glow"></div>
+<div class="glow-box yellow-glow"></div>
+<div class="glow-box blue-glow"></div>
+<h1>Nézz vissza ennyi idő múlva:</h1>
+<div class="countdown" id="countdown"></div>
+<div class="kiss-emoji">😘</div>
+
+<script>
+    function updateCountdown() {
+        const targetDate = new Date(new Date().getFullYear(), 3, 1, 12, 0, 0);
+        const now = new Date();
+        if (now > targetDate) {
+            targetDate.setFullYear(targetDate.getFullYear() + 1);
+        }
+        const difference = targetDate - now;
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((difference / (1000 * 60)) % 60);
+        const seconds = Math.floor((difference / 1000) % 60);
+        document.getElementById('countdown').innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 100);
+    updateCountdown();
+</script>
+</body>
+</html>
