@@ -95,27 +95,8 @@
 <div class="glow-box white-glow"></div>
 <div class="glow-box yellow-glow"></div>
 <div class="glow-box blue-glow"></div>
-<h1>Nézz vissza ennyi idő múlva:</h1>
-<div class="countdown" id="countdown"></div>
+<h1><a href="https://fb.me/e/4DS9vpiun">😉😉 Jegyek itt 😉😉</a></h1>
 <div class="kiss-emoji">😘</div>
 
-<script>
-    function updateCountdown() {
-        const targetDate = new Date(new Date().getFullYear(), 3, 1, 12, 0, 0);
-        const now = new Date();
-        if (now > targetDate) {
-            targetDate.setFullYear(targetDate.getFullYear() + 1);
-        }
-        const difference = targetDate - now;
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((difference / (1000 * 60)) % 60);
-        const seconds = Math.floor((difference / 1000) % 60);
-        document.getElementById('countdown').innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
-
-    setInterval(updateCountdown, 100);
-    updateCountdown();
-</script>
 </body>
 </html>
